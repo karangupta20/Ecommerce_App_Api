@@ -24,6 +24,9 @@ app.get('/home',async function (req,res){
     const getCategoires=await Categories.findAll({include: Product});
     res.json(getCategoires);
 });
+app.get('/', (req, res) => {
+    res.send('new home');
+})
 
 
 app.listen(configs.PORT,async ()=>{
